@@ -1,0 +1,39 @@
+<%- include('header',{
+    title:'Signup'
+}); -%>
+
+<div class="register">
+    <div class="title">
+        Sign Up
+    </div> 
+    <form class="form" action="" method="POST">
+        <!-- <label for="user_name">Name</label>
+        <input type="text" class="input" name="_name" autocomplete="off" id="user_name" placeholder="Enter your name">
+        <label for="user_email">Email</label>
+        <input type="email" class="input" name="_email" autocomplete="off" id="user_email" placeholder="Enter your email">
+        <label for="user_pass">Password</label>
+        <input type="password" class="input" name="_password" id="user_pass" placeholder="Enter new password"> -->
+        <div class="field">
+            <input type="text" name="_name" autocomplete="off" id="user_name" required>
+            <label>Enter your name</label>
+        </div>
+        <div class="field">
+            <input type="text" name="_email" autocomplete="off" id="user_email" required>
+            <label>Enter your email</label>
+         </div>
+         <div class="field">
+            <input type="password" required name="_password" id="user_pass">
+            <label>Enter your new Password</label>
+        <% if(typeof msg != 'undefined'){ %>
+        <div class="success-msg"><%= msg %></div><% }
+        if(typeof error !== 'undefined'){ %>
+        <div class="err-msg"><%= error %></div><% } %>
+        <input type="submit" value="Submit">
+        <!-- <div class="link"><a href="./login">Login</a></div> -->
+        <div class="login-link">
+            Already have an account ? <a href="./login">Login Here</a>
+        </div>
+    </form>
+</div>
+
+<%- include('footer'); -%>

@@ -1,0 +1,31 @@
+<%- include('header',{
+    title:'Login'
+}); -%>
+
+<div class="login">
+    <div class="title">
+        Login
+    </div> 
+    <form class= "form" action="#" method="POST">
+        <!-- <label for="user_email">Email</label>
+        <input type="email" class="input" name="_email" autocomplete="off" id="user_email" placeholder="Enter your email">
+        <label for="user_pass">Password</label>
+        <input type="password" class="input" name="_password" id="user_pass" placeholder="Enter new password"> -->
+        <div class="field">
+            <input type="text" name="_email" autocomplete="off" id="user_email" required>
+            <label>Email Address</label>
+         </div>
+         <div class="field">
+            <input type="password" required name="_password" id="user_pass">
+            <label>Password</label>
+        <% if(typeof error !== 'undefined'){ %>
+        <div class="err-msg"><%= error %></div><% } %>
+        <input type="submit" value="Login">
+        <!-- <div class="signup-link"><a href="./signup">Sign Up</a></div> -->
+        <div class="signup-link">
+            Not a member ? <a href="./signup">Sign up now</a>
+        </div>
+    </form>
+</div>
+
+<%- include('footer'); -%>
